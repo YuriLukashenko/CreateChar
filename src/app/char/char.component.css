@@ -1,0 +1,85 @@
+.char-container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.personImage{
+  flex: 1 0 0;
+}
+
+.personImage img{
+  width: 100%;
+}
+
+.questionBlock{
+  flex: 0 0 35%;
+  margin: 0px;
+  padding: 20px;
+  background: #FFF9F9;
+}
+
+.questionHeader{
+  font-family: Roboto;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+/*radio-button-styling*/
+.answersContainer {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.answersContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  height: 20px;
+  width: 20px;
+  border: 1px solid black;
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.answersContainer:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.answersContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.answersContainer .checkmark:after {
+  top: 4px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: black;
+}
+
+.nextBtn{
+  background: #93C2ED;
+  color: white;
+}
+
+
+
+
+
