@@ -1,7 +1,7 @@
 <div class="popupContainer">
-  <div>The first:</div>
-  <div class="font-weight-bold">Race</div>
-  <div>Everyone is crazy about it now...</div>
+  <div>{{ lines[0] }}</div>
+  <div class="font-weight-bold">{{lines[1]}}</div>
+  <div>{{ lines[2] }}</div>
   <div class="d-flex justify-content-end">
     <button class="btn gotItBtn" (click)="activeModal.close('Close click')">Got it</button>
   </div>

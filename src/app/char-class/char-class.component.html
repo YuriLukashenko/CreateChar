@@ -1,0 +1,31 @@
+<div class="char-container">
+  <div class="d-flex personImage align-items-end">
+    <img [src]="imagePath">
+  </div>
+  <div class="questionBlock">
+    <div class="questionHeader">
+      <span>Choose a&nbsp;</span>
+      <span class="font-weight-bold">class&nbsp;</span>
+      <span>from the options:</span>
+    </div>
+    <div class="mt-3">
+      <label class="answersContainer">Warrior
+        <input type="radio" [checked]="isWarrior" name="radio" (click)="selectWarrior()">
+        <span class="checkmark"></span>
+      </label>
+      <label class="answersContainer">Dude with bow
+        <input type="radio" [checked]="isBow" name="radio" (click)="selectBow()">
+        <span class="checkmark"></span>
+      </label>
+      <label class="answersContainer">Mage
+        <input type="radio" [checked]="isMage" name="radio" (click)="selectMage()">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="d-flex justify-content-between">
+      <button class="btn nextBtn" [routerLink]="'/char-race'">&larr;&nbsp;Back</button>
+      <button class="btn nextBtn" (click)="OnClick()">Next&nbsp;&rarr;</button>
+    </div>
+  </div>
+</div>
+
