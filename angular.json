@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "CreateChar"
+    }
+  },
+  "defaultProject": "CreateChar",
+  "cli": {
+    "analytics": false
+  }
 }

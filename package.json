@@ -26,6 +26,7 @@
     "@ng-bootstrap/ng-bootstrap": "^6.0.0",
     "bootstrap": "^4.4.1",
     "ng2-opd-popup": "^1.1.21",
+    "ngx-color-picker": "^9.0.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

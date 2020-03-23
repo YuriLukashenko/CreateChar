@@ -1,0 +1,41 @@
+<div class="char-container">
+  <div class="d-flex personImage align-items-start"
+       [style.background]="selectedColor">
+    <img [src]="imagePath">
+  </div>
+  <div class="selectThemeBlock" [ngClass]="isDay? 'dayThemeBg': 'nightThemeBg'">
+    <div class="selectThemeBlockInside">
+      <div [ngClass]="isDay? 'dayThemeFg': 'nightThemeFg'">Theme:</div>
+      <label class="selectThemeContainer" [ngClass]="isDay? 'dayThemeFg': 'nightThemeFg'">Day
+        <input type="radio" [checked]="isDay" name="radio" (click)="onClickDay()">
+        <span class="checkmark" [ngClass]="isDay? 'dayCheckmark': 'nightCheckmark'"></span>
+      </label>
+      <label class="selectThemeContainer" [ngClass]="isDay? 'dayThemeFg': 'nightThemeFg'">Night
+        <input type="radio" [checked]="!isDay" name="radio" (click)="onClickNight()">
+        <span class="checkmark" [ngClass]="isDay? 'dayCheckmark': 'nightCheckmark'"></span>
+      </label>
+    </div>
+    <div class="d-flex justify-content-between">
+      <div class="BgText" [ngClass]="isDay? 'dayThemeFg': 'nightThemeFg'">Background:</div>
+      <div
+        [style.background]="selectedColor"
+        [cpHeight]="220"
+        [cpToggle]="true"
+        [cpDialogDisplay]="'inline'"
+        [cpCancelButton]="true"
+        [cpPosition]="'top'"
+        [cpDisableInput]="true"
+        [cpCancelButtonClass]="'d-none'"
+        [(colorPicker)]="selectedColor">
+      </div>
+    </div>
+    <div class="d-flex justify-content-between p-2">
+      <button class="btn nextBtn"
+              [ngClass]="isDay? 'daySaveButton': 'nightSaveButton'"
+              (click)="onSaveClick()">Save &#9881;</button>
+      <button class="btn nextBtn"
+              [ngClass]="isDay? 'daySaveButton': 'nightSaveButton'"
+              [routerLink]="'/final-page'">Finish&nbsp;&rarr;</button>
+    </div>
+  </div>
+</div>

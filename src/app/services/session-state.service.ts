@@ -5,14 +5,19 @@ import {Injectable} from '@angular/core';
 export class SessionStateService {
   selectedChar: string;
   selectedClass: string;
+  selectedFinally: string;
   tipsStatuses: {[id: string]: boolean; } = { };
   tipsStatusesSecond: {[id: string]: boolean; } = { };
   isShowFirstClar: boolean;
   isShowSecondClar: boolean;
+  isShowThirdClar: boolean;
+  dayColor: string;
+  nightColor: string;
 
   constructor(private imagesService: ImagesService) {
     this.selectedChar = 'human';
     this.selectedClass = 'warrior';
+    this.selectedFinally = 'warrior human';
 
     this.tipsStatuses.human = false;
     this.tipsStatuses.elf = false;
@@ -24,6 +29,10 @@ export class SessionStateService {
 
     this.isShowFirstClar = false;
     this.isShowSecondClar = false;
+    this.isShowThirdClar = false;
+
+    this.dayColor = localStorage.getItem('dayColor');
+    this.nightColor = localStorage.getItem('nightColor');
   }
 
   getSelectedChar() {
@@ -40,6 +49,14 @@ export class SessionStateService {
 
   setSelectedClass(selectedClass: string) {
     this.selectedClass = selectedClass;
+  }
+
+  getSelectedFinally() {
+    return this.selectedFinally;
+  }
+
+  setSelectedFinally(selectedFinally: string) {
+    this.selectedFinally = selectedFinally;
   }
 
   getTipsStatuses() {
@@ -72,5 +89,31 @@ export class SessionStateService {
 
   setIsShowSecondClar(isShowSecondClar: boolean) {
     this.isShowSecondClar = isShowSecondClar;
+  }
+
+  getIsShowThirdClar() {
+    return this.isShowThirdClar;
+  }
+
+  setIsShowThirdClar(isShowThirdClar: boolean) {
+    this.isShowThirdClar = isShowThirdClar;
+  }
+
+  getDayColor() {
+    return this.dayColor;
+  }
+
+  setDayColor(dayColor: string) {
+    this.dayColor = dayColor;
+    localStorage.setItem('dayColor', this.dayColor);
+  }
+
+  getNightColor() {
+    return this.nightColor;
+  }
+
+  setNightColor(nightColor: string) {
+    this.nightColor = nightColor;
+    localStorage.setItem('nightColor', this.nightColor);
   }
 }

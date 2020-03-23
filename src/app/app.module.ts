@@ -11,6 +11,10 @@ import { TipsComponent } from './tips/tips.component';
 import { CharClassComponent } from './char-class/char-class.component';
 import { SessionStateService } from './services/session-state.service';
 import { ImagesService } from './services/images.service';
+import { CharThemeComponent } from './char-theme/char-theme.component';
+import { ClarsThemeComponent } from './clars-theme/clars-theme.component';
+import { ColorPickerModule } from 'ngx-color-picker';
+import { FinalPageComponent } from './final-page/final-page.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +23,16 @@ import { ImagesService } from './services/images.service';
     StartPageComponent,
     ClarsComponent,
     TipsComponent,
-    CharClassComponent
+    CharClassComponent,
+    CharThemeComponent,
+    ClarsThemeComponent,
+    FinalPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    ColorPickerModule
   ],
   providers: [SessionStateService, ImagesService],
   bootstrap: [AppComponent],

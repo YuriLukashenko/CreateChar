@@ -1,0 +1,35 @@
+.finalContainer{
+  margin: 15px;
+}
+
+.coolLogoText {
+  font-family: Waiting for the Sunrise;
+  font-size: 80px;
+  color: #93C2ED
+}
+
+.m-20-10{
+  margin: 15px 50px;
+}
+
+.hrNormal{
+  border-color: #93C2ED;
+}
+
+p{
+  font-family: Roboto;
+  margin: 30px 50px;
+  font-size: 20px;
+  color: #716868;
+  line-height: 28px;
+}
+
+.finishButton{
+  font-family: Roboto;
+  font-size: 36px;
+  color: #FFFFFF;
+  background: #93C2ED;
+  margin: 20px 10px;
+  padding: 10px 30px;
+}
+

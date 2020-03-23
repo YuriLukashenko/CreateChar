@@ -4,6 +4,7 @@ import {NgbModal, NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
 import {ClarsComponent} from '../clars/clars.component';
 import {ImagesService} from '../services/images.service';
 import {TipsComponent} from '../tips/tips.component';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-char-class',
@@ -21,7 +22,8 @@ export class CharClassComponent implements OnInit {
   constructor(config: NgbModalConfig,
               private sessionStateService: SessionStateService,
               private imagesService: ImagesService,
-              private modalService: NgbModal) {
+              private modalService: NgbModal,
+              private router: Router) {
     config.backdrop = 'static';
     config.keyboard = false;
 
@@ -88,12 +90,17 @@ export class CharClassComponent implements OnInit {
               this.tipsStatusesSecond.human_warrior = true;
               this.sessionStateService.setTipsStatusesSecond(this.tipsStatusesSecond);
             } else {
-              // todo navigate to next page
+              this.sessionStateService.setSelectedFinally('warrior human');
+              this.router.navigateByUrl('/char-theme');
             }
             break;
           case 'bow':
+            this.sessionStateService.setSelectedFinally('human-archer');
+            this.router.navigateByUrl('/char-theme');
             break;
           case 'mage':
+            this.sessionStateService.setSelectedFinally('human-mage');
+            this.router.navigateByUrl('/char-theme');
             break;
           default: break;
         }
@@ -101,10 +108,16 @@ export class CharClassComponent implements OnInit {
       case 'elf':
         switch (this.selectedClass) {
           case 'warrior':
+            this.sessionStateService.setSelectedFinally('warrior elf');
+            this.router.navigateByUrl('/char-theme');
             break;
           case 'bow':
+            this.sessionStateService.setSelectedFinally('elf-archer');
+            this.router.navigateByUrl('/char-theme');
             break;
           case 'mage':
+            this.sessionStateService.setSelectedFinally('elf-mage');
+            this.router.navigateByUrl('/char-theme');
             break;
           default: break;
         }
@@ -118,10 +131,13 @@ export class CharClassComponent implements OnInit {
               this.tipsStatusesSecond.dwarf_warrior = true;
               this.sessionStateService.setTipsStatusesSecond(this.tipsStatusesSecond);
             } else {
-              // todo navigate to next page
+              this.sessionStateService.setSelectedFinally('warrior dwarf');
+              this.router.navigateByUrl('/char-theme');
             }
             break;
           case 'bow':
+            this.sessionStateService.setSelectedFinally('dwarf-archer');
+            this.router.navigateByUrl('/char-theme');
             break;
           case 'mage':
             if (!this.tipsStatusesSecond.dwarf_mage) {
@@ -130,7 +146,8 @@ export class CharClassComponent implements OnInit {
               this.tipsStatusesSecond.dwarf_mage = true;
               this.sessionStateService.setTipsStatusesSecond(this.tipsStatusesSecond);
             } else {
-              // todo navigate to next page
+              this.sessionStateService.setSelectedFinally('dwarf-mage');
+              this.router.navigateByUrl('/char-theme');
             }
             break;
           default: break;
